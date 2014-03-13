@@ -119,7 +119,8 @@ window.spawnVideoPlayer = function (url, subs, movieModel) {
     });
 
     var subtracks = '';
-    for(var index in subArray ) {
+    var index;
+    for( index in subArray ) {
       subtracks += '<track kind="subtitles" src="' + subArray[index].sub + '" srclang="'+ subArray[index].language +'" label="' + subArray[index].languageName + '" charset="utf-8" />';
     }
 
@@ -179,7 +180,8 @@ window.spawnVideoPlayer = function (url, subs, movieModel) {
 
 
     tracks = video.textTracks();
-    for( var i in tracks ) {
+    var i;
+    for( i in tracks ) {
       tracks[i].on('loaded', function(){
         // Trigger a resize to get the subtitles position right
         $(window).trigger('resize');
